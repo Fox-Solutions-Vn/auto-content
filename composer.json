@@ -1,0 +1,15 @@
+{
+    "name": "foxsolution/auto-content",
+    "description": "Auto generate and spin content",
+    "type": "package",
+    "require": {
+        "orhanerday/open-ai": "^4.7.1"
+    },
+    "authors": [
+        {
+            "name": "Van Nguyen",
+            "homepage": "https://anhvan.realme.bio",
+            "role": "Developer"
+        }
+    ]
+}

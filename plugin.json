@@ -1,0 +1,10 @@
+{
+    "id": "foxsolution/auto-content",
+    "name": "Auto Content",
+    "namespace": "FoxSolution\\AutoContent\\",
+    "provider": "FoxSolution\\AutoContent\\Providers\\AutoContentServiceProvider",
+    "author": "Fox Solutions",
+    "url": "https://foxsolutions.vn",
+    "version": "1.0.0",
+    "description": "Auto generate and spin content"
+}
