@@ -8,14 +8,22 @@ class AutoContent {
         this.spinModal = $('#auto-content-spin-modal');
         this.$body = $('body');
 
-        this.handleGenerateEvents();
-        this.handleSpinEvents();
+        if ($('#auto-content-modal').length) {
+            this.handleGenerateEvents();
+        }
+        if ($('#auto-content-spin-modal').length) {
+            this.handleSpinEvents();
+        }
         this.initEditor();
     }
 
     initEditor() {
-        initCkEditor('preview_content');
-        initCkEditor('preview_spin_content');
+        if (document.getElementById('preview_content')) {
+            initCkEditor('preview_content');
+        }
+        if (document.getElementById('preview_spin_content')) {
+            initCkEditor('preview_spin_content');
+        }
     }
 
     updateModalState(modal, isLoading) {
@@ -102,7 +110,7 @@ class AutoContent {
         let $btnPush = $('#push-content-to-target');
 
         const renderPrompt = (index = 0) => {
-            if ($promptTemplates[index]) {
+            if (typeof $promptTemplates !== 'undefined' && $promptTemplates[index]) {
                 $promptEditor.val($promptTemplates[index].content);
             }
         }
@@ -180,7 +188,7 @@ class AutoContent {
         $self.spinModal.find('.modal-body .loading-spinner').hide();
 
         const renderSpinTemplate = (index = 0) => {
-            if ($spinTemplates[index]) {
+            if (typeof $spinTemplates !== 'undefined' && $spinTemplates[index]) {
                 $spinEditor.val($spinTemplates[index]?.content);
             }
         }
@@ -188,7 +196,7 @@ class AutoContent {
         const pushTargetContentToSpin = ($targetName = '') => {
             let $contentValue = '';
             let $previewId = $previewEditor.prop('id');
-            
+
             if (!$targetName) {
                 return;
             }
