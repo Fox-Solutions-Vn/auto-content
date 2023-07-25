@@ -5,6 +5,6 @@
     "provider": "FoxSolution\\AutoContent\\Providers\\AutoContentServiceProvider",
     "author": "Fox Solutions",
     "url": "https://foxsolutions.vn",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Auto generate and spin content"
 }
